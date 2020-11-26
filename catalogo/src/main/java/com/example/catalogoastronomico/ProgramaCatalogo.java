@@ -81,7 +81,7 @@ public class ProgramaCatalogo {
                 else if (tipo.equals("gr"))
                     res = new EstrellaConTipo(nombre, brillo, distancia, numPlanetas, ga, TipoEstrella.GIGANTE_ROJA);
                 else if (tipo.equals("sb"))
-                    res = new EstrellaConTipo(nombre, brillo, distancia, numPlanetas, ga, TipoEstrella.SUBGIGANTE_BLANCA);
+                    res = new EstrellaConTipo(nombre, brillo, distancia, numPlanetas, ga, TipoEstrella.SUBGIGANTE_BLANCO);
             }
             else {
                 System.out.println("La galaxia de esta estrella no existe en el catálogo. Debes crearla primero");
@@ -111,7 +111,7 @@ public class ProgramaCatalogo {
         ca.anade(andromeda);
         Astro sol = new EstrellaConTipo("sol", 4, 149.6, 8, (Galaxia) vialactea, TipoEstrella.ENANA_AMARILLA);
         ca.anade(sol);
-        Astro alpheratz = new EstrellaConTipo("alpheratz", 7, 9.16E13, 100, (Galaxia) andromeda, TipoEstrella.SUBGIGANTE_BLANCA);
+        Astro alpheratz = new EstrellaConTipo("alpheratz", 7, 9.16E13, 100, (Galaxia) andromeda, TipoEstrella.SUBGIGANTE_BLANCO);
         ca.anade(alpheratz);
         Astro tierra = new Planeta("tierra", 0, 0, true, (Estrella) sol);
         ca.anade(tierra);
@@ -140,7 +140,7 @@ public class ProgramaCatalogo {
 
                 StringBuffer sb = new StringBuffer();
 
-                for (Astro a : ca.filtraAstrosSimpleVista()) {
+                for (Astro a : ca.filtraEstrellasSimpleVista()) {
                     sb.append(a.getNombre());
                     sb.append(" ");
                 }
